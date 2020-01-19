@@ -18,10 +18,10 @@ object View {
 
   }
 
-  def winner:Unit =
-    ConsoleIO.writeln("You Win!!!")
-
-  def loser:Unit =
-    ConsoleIO.writeln("You lose")
-
+  def finishGame(game: Game) = {
+    if (game.isWinner)
+      ConsoleIO.writeln("\nYou Win!!!")
+    else
+      ConsoleIO.writeln("\nYou lose")
+  }
 }

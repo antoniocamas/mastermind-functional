@@ -7,7 +7,7 @@ object Combination {
 
 class Combination(combination:List[Int]) {
 
-  private val combination_ = combination
+  protected val combination_ = combination
 
   override def equals(that: Any): Boolean =
     that match {

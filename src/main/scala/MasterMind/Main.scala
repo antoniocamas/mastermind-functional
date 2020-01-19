@@ -13,10 +13,7 @@ object Main {
       game = game.proposeCombination(View.getCombination(game))
       View.finishTurn(game)
     } while (!game.isFinished)
-    if (game.isWinner)
-      View.winner
-    else
-      View.loser
+   View.finishGame(game)
   }
 
 

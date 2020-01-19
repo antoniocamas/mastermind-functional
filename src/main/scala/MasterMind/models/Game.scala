@@ -1,11 +1,8 @@
 package MasterMind.models
 
-import scala.util.Random
+class Game(proposedCombinations:List[Combination],secretCombination:SecretCombination ) {
 
-class Game(proposedCombinations:List[Combination],secretCombination:Combination ) {
-
-  //val a = List(1 to 3).map(n=> Random.nextInt(10))
-  def this() = this(Nil, new Combination(List(1, 2, 3)))
+  def this() = this(Nil, new SecretCombination())
 
   private val MAX_LONG = 2
   private val proposedCombinations_ = proposedCombinations
