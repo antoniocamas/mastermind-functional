@@ -11,10 +11,8 @@ object SecretView {
         case head :: tail => "* " + hideCombination(tail)
       }
 
-    println("\nSecret Combination")
-    println(hideCombination(1.to(Combination.LENGTH).toList))
-    println("======================")
+    ConsoleIO.writeln("\nSecret Combination")
+    ConsoleIO.writeln(hideCombination(1.to(Combination.LENGTH).toList))
+    ConsoleIO.writeln("======================")
   }
-
-
 }

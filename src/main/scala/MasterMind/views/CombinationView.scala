@@ -16,8 +16,7 @@ object CombinationView {
     }
 
   def readElements:List[Int] = {
-    print("Propose Combination: ")
-    scala.io.StdIn.readLine().toList.filter(_ != ' ').map(translate).filter(_ > 0)
+    ConsoleIO.readString("Propose Combination").toList.filter(_ != ' ').map(translate).filter(_ > 0)
   }
 
   def readCombination(nElements:Int):Combination = {

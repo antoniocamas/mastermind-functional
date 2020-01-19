@@ -5,7 +5,7 @@ import scala.util.Random
 class Game(proposedCombinations:List[Combination],secretCombination:Combination ) {
 
   //val a = List(1 to 3).map(n=> Random.nextInt(10))
-  def this() = this(Nil, new Combination(List(1, 2, 3, 4)))
+  def this() = this(Nil, new Combination(List(1, 2, 3)))
 
   private val MAX_LONG = 2
   private val proposedCombinations_ = proposedCombinations

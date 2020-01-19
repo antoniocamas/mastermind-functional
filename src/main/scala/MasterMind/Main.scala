@@ -1,22 +1,22 @@
 package MasterMind
 
 import MasterMind.models.Game
-import MasterMind.views.CombinationView
-import MasterMind.views.GameView
+import MasterMind.views.View
 
 object Main {
 
   var game = new Game()
 
-
   def main(args: Array[String]): Unit = {
     do {
-      GameView.write(game)
-      game = game.proposeCombination(CombinationView.readCombination(3))
+      View.startTurn(game)
+      game = game.proposeCombination(View.getCombination(game))
+      View.finishTurn(game)
     } while (!game.isFinished)
-
-
-
+    if (game.isWinner)
+      View.winner
+    else
+      View.loser
   }
 
 
