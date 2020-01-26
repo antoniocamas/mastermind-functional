@@ -15,6 +15,9 @@ class Game(proposedCombinations:List[Combination],secretCombination:SecretCombin
   def getTriesLeft: Int =
     this.MAX_LONG - this.proposedCombinations_.length
 
+  def getLatestResult:(Int, Int) =
+    Result.getResult(this.proposedCombinations_.head, this.secretCombination_)
+
   def isFinished:Boolean =
     this.isWinner || this.proposedCombinations_.length >= this.MAX_LONG
 

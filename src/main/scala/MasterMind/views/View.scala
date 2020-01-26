@@ -15,7 +15,7 @@ object View {
   }
 
   def finishTurn(game:Game) = {
-
+    ResultView.writeln(game.getLatestResult)
   }
 
   def finishGame(game: Game) = {
