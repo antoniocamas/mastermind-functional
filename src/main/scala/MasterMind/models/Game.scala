@@ -4,7 +4,7 @@ class Game(proposedCombinations:List[Combination],secretCombination:SecretCombin
 
   def this() = this(Nil, new SecretCombination())
 
-  private val MAX_LONG = 2
+  private val MAX_LONG = 15
   private val proposedCombinations_ = proposedCombinations
   private val secretCombination_ = secretCombination
 

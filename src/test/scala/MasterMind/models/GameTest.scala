@@ -29,6 +29,6 @@ class GameTest extends FunSuite {
 
   test("Winner Result") {
     var sut = GameBuilder.build
-    assertResult((3,0))(sut.proposeCombination(SecretCombinationBuilder.build).getLatestResult)
+    assertResult((Combination.LENGTH,0))(sut.proposeCombination(SecretCombinationBuilder.build).getLatestResult)
   }
 }

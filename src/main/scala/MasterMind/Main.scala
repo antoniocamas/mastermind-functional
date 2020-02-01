@@ -15,6 +15,4 @@ object Main {
     } while (!game.isFinished)
    View.finishGame(game)
   }
-
-
 }

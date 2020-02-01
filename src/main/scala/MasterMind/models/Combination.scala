@@ -2,7 +2,7 @@ package MasterMind.models
 
 object Combination {
 
-  val LENGTH = 3
+  val LENGTH = 4
 
   private def removeColor(colors: List[Int], color: Int): List[Int] = colors match {
     case `color` :: tail =>  tail
@@ -13,17 +13,7 @@ object Combination {
 
 class Combination(combination:List[Int]) {
 
-  val combination_ = combination
-
-  def contains(color:Int) : Boolean = {
-    def isColorInList(colors:List[Int]):Boolean =
-      colors match {
-        case Nil => false
-        case head :: _ if(color == head) => true
-        case _ :: tail => isColorInList(tail)
-      }
-    isColorInList(this.combination_)
-  }
+  private val combination_ = combination
 
   private def getBlackPositions(that:Combination): List[Boolean] =
     (that.combination_, this.combination_) match {
