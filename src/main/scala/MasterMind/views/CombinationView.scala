@@ -7,11 +7,11 @@ object CombinationView {
     ConsoleIO.readString("Propose Combination").toList.filter(_ != ' ').map(ColorView.translate).filter(_ > 0)
   }
 
-  def readCombination(nElements:Int):Combination = {
+  def readCombination:Combination = {
     val combination = readElements
     combination.length match {
-      case p if (p == nElements) => new Combination(combination)
-      case _ => readCombination(nElements)
+      case p if (p == Combination.LENGTH) => new Combination(combination)
+      case _ => readCombination
     }
   }
 }

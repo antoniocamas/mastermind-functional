@@ -1,8 +1,10 @@
 package MasterMind.views
 
+import MasterMind.models.Game
+
 object ResultView {
-  def writeln(result:(Int, Int)):Unit =
-    result match {
+  def write(game:Game):Unit =
+    game.getLatestResult match {
       case (black, white) => ConsoleIO.writeln(s"Blacks: $black Whites: $white")
     }
 

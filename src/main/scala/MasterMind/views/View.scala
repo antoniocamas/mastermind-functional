@@ -7,21 +7,19 @@ object View {
 
   def startTurn(game:Game) = {
     SecretView.write()
-    TryView.write(game.getTriesLeft)
+    TryView.write(game)
+    ColorView.write()
   }
 
-  def getCombination(game:Game):Combination ={
-    CombinationView.readCombination(Combination.LENGTH)
-  }
+  def getCombination(game:Game):Combination =
+    CombinationView.readCombination
 
-  def finishTurn(game:Game) = {
-    ResultView.writeln(game.getLatestResult)
-  }
+  def finishTurn(game:Game) =
+    ResultView.write(game)
 
-  def finishGame(game: Game) = {
+  def finishGame(game: Game) =
     if (game.isWinner)
       ConsoleIO.writeln("\nYou Win!!!")
     else
       ConsoleIO.writeln("\nYou lose")
-  }
 }

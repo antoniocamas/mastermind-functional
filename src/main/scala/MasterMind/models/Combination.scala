@@ -4,11 +4,12 @@ object Combination {
 
   val LENGTH = 4
 
-  private def removeColor(colors: List[Int], color: Int): List[Int] = colors match {
-    case `color` :: tail =>  tail
-    case x :: tail => x :: removeColor(tail, color)
-    case _ => Nil
-  }
+  private def removeColor(colors: List[Int], color: Int): List[Int] =
+    colors match {
+      case `color` :: tail =>  tail
+      case x :: tail => x :: removeColor(tail, color)
+      case _ => Nil
+    }
 }
 
 class Combination(combination:List[Int]) {
@@ -36,11 +37,11 @@ class Combination(combination:List[Int]) {
       }
     }
 
-  def getWhites(proposal:Combination): Int = {
+  def getWhites(secret:Combination): Int = {
     def filterElementsInBlackPositions(toBeFiltered:Combination):List[Int] =
-      (this.getBlackPositions(proposal), toBeFiltered.combination_).zipped.collect { case (a, b) if (!a) => b }.toList
+      (this.getBlackPositions(secret), toBeFiltered.combination_).zipped.collect { case (a, b) if (!a) => b }.toList
 
-    countWhites(filterElementsInBlackPositions(this), filterElementsInBlackPositions(proposal))
+    countWhites(filterElementsInBlackPositions(this), filterElementsInBlackPositions(secret))
   }
 
   override def equals(that: Any): Boolean =
