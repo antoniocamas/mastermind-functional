@@ -5,15 +5,15 @@ import builders.SecretCombinationBuilder
 
 object CombinationBuilder {
 
-  def build(numberOfOnes: Int): Combination =
-    new Combination(buildColors(numberOfOnes))
+  def build(coindicendesWithSecret: Int): Combination =
+    new Combination(buildColors(coindicendesWithSecret))
 
   def build:Combination =
     build(0)
 
-  def buildReversed(numberOfOnes:Int): Combination =
-    new Combination(buildColors(numberOfOnes).reverse)
+  def buildReversed(coindicendesWithSecret:Int): Combination =
+    new Combination(buildColors(coindicendesWithSecret).reverse)
 
-  private def buildColors(numberOfOnes:Int): List[Int] =
-    1.to(numberOfOnes).toList.map(n => 1) ::: 1.to(Combination.LENGTH - numberOfOnes).toList.map(n => 2)
+  private def buildColors(coindicendesWithSecret:Int): List[Int] =
+    1.to(coindicendesWithSecret).toList.map(n => 1) ::: 1.to(Combination.LENGTH - coindicendesWithSecret).toList.map(n => 2)
 }

@@ -36,10 +36,11 @@ class Combination(combination:List[Int]) {
       }
     }
 
-  def getWhites(that:Combination): Int = {
-    val filteredThis = (this.getBlackPositions(that), this.combination_).zipped.collect { case (a, b) if (!a) => b }.toList
-    val filteredThat = (this.getBlackPositions(that), that.combination_).zipped.collect { case (a, b) if (!a) => b }.toList
-    countWhites(filteredThis, filteredThat)
+  def getWhites(proposal:Combination): Int = {
+    def filterElementsInBlackPositions(toBeFiltered:Combination):List[Int] =
+      (this.getBlackPositions(proposal), toBeFiltered.combination_).zipped.collect { case (a, b) if (!a) => b }.toList
+
+    countWhites(filterElementsInBlackPositions(this), filterElementsInBlackPositions(proposal))
   }
 
   override def equals(that: Any): Boolean =

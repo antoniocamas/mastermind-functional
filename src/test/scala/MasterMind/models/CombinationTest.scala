@@ -34,4 +34,8 @@ class CombinationTest extends FunSuite {
   test("test two combinations are not equal") {
     assert(CombinationBuilder.build != CombinationBuilder.build(1))
   }
+
+  test("test a combination and anything else are not equal") {
+    assert(CombinationBuilder.build != 1)
+  }
 }
